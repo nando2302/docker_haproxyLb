@@ -23,7 +23,7 @@ services:
     ports:
       - target: 8080
         published: 8080
-        protocol: http
+        protocol: tcp
     deploy:
       update_config:
         parallelism: 0
