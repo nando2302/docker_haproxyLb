@@ -19,7 +19,7 @@ services:
     
 
   haproxy_lb:
-    image: nando2302/lb-haproxy:1.0
+    image: nando2302/lb-haproxy:2.0
     ports:
       - target: 8080
         published: 8080
