@@ -9,14 +9,14 @@ services:
     deploy:
       mode: replicated
       replicas: 2
-      placement:
-        constraints: [node.role == worker]
-      restart_policy:
-        condition: on-failure
       update_config:
         parallelism: 1
         delay: 10s
         failure_action: rollback
+        order: start-first
+      placement:
+        constraints: [node.role == worker]
+    
 
   haproxy_lb:
     image: nando2302/lb-haproxy:1.0
